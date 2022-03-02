@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<!--Create a box where the user can write in: -->
+<input/>
+
+<!--Create a button-->
+<button>Compare com o meu segredo</button>
+
+<script>
+    
+    function pulaLinha() {
+        
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+    
+    //Acess the input from html:   
+    var input = document.querySelector("input");
+    input.focus(); //the cursor is already at the input box
+
+    function verifica() {
+
+        if(input.value == segredo) {
+
+            alert("Você ACERTOU!");
+        } else {
+
+            alert("Você ERROU!");
+        }
+
+        input.value = "";
+        input.focus();
+
+    }
+    var segredos = Math.round(Math.random() * 10);
+
+    //acess the button from html:
+    var button = document.querySelector("button");
+    button.onclick = verifica; // no onclick do button vai ficar salvo o código da função. Se eu colocar verifica(), ele vai EXECUTAR a função antes de apertar
+
+    //se fosse verifica(), o button.onclick chama a função verifica e como ela não retornada nada,
+    //o valor de button.onclick será undefined. Além disso, como foram usados os () na chamada da
+    //função, ela será executada antes mesmo  de clicarmos no botão. É por isso que fazemos:
+    //button.onclick = verifica;
+</script>

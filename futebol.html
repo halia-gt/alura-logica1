@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+    
+    function pulaLinha() {
+        
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(altura, peso) {
+
+        return peso / (altura * altura)
+    }
+        
+var vitorias = parseInt(prompt("Entre com o número de vitórias.")); // prompt's return is always str
+var empates = parseInt(prompt("Entre com o número de empates.")); // when we do vitorias *3, js helps us converting the str to a number
+
+// var pontos = vitorias*3 + empates <~ is going to make a str convert to number, then multiply for 3, but the number is going to be concatenated with the str from the next prompt
+
+var pontos = vitorias*3 + empates;
+mostra("Os pontos do seu time é " + pontos + ".");
+
+if(pontos > 28) {
+
+    mostra("Seu time está melhor do que no ano passado.");
+}
+
+if (pontos < 28) {
+    
+    mostra("Seu time está pior do que no ano passado.");
+}   
+
+if (pontos == 28) {
+
+    mostra("Seu time está igual ao ano passado.");
+}
+
+</script>
